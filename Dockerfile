@@ -19,4 +19,4 @@ RUN buildDeps='make gcc gcc-c++ git tar unzip libevent clang libstdc++-static'; 
     && yum remove -y $buildDeps
 
 EXPOSE 8889
-CMD [ "/cerberus/bin/cerberus /cerberus/conf/cerberus.conf" ]
+CMD [ "/cerberus/bin/cerberus", "/cerberus/conf/cerberus.conf" ]
