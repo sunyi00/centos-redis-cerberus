@@ -2,6 +2,7 @@ FROM centos:7.1.1503
 
 RUN buildDeps='make gcc gcc-c++ git tar unzip gtest libevent clang libstdc++-static'; \
     set -x \
+    && yum install -y epel-release \
     && yum install -y $buildDeps \
     && yum clean -y all && rm -rf /var/cache/yum/* \
     && cd /root/ \
@@ -10,6 +11,7 @@ RUN buildDeps='make gcc gcc-c++ git tar unzip gtest libevent clang libstdc++-sta
     && rm redis-cerberus.zip \
     && cd redis-cerberus-master/ \
     && make MODE=debug STATIC_LINK=1 \
+    && make runtest \
     && mkdir -p /cerberus/bin /cerberus/conf \
     && cp -f cerberus /cerberus/bin/ \
     && cp -f example.conf /cerberus/conf/cerberus.conf \
