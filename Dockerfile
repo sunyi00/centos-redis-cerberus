@@ -15,7 +15,7 @@ RUN buildDeps='make gcc gcc-c++ git tar unzip libevent clang libstdc++-static'; 
     && cp -f cerberus /cerberus/bin/ \
     && cp -f example.conf /cerberus/conf/cerberus.conf \
     && cd /root/ \
-    && rm -rf /root/redis-cerberus-master/
+    && rm -rf /root/redis-cerberus-master/ \
     && yum remove -y $buildDeps
 
 EXPOSE 8889
