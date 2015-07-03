@@ -6,7 +6,7 @@ RUN buildDeps='make gcc gcc-c++ git tar unzip libevent clang libstdc++-static'; 
     && yum install -y $buildDeps \
     && yum clean -y all && rm -rf /var/cache/yum/* \
     && cd /root/ \
-    && curl -L https://github.com/sunyi00/redis-cerberus/archive/master.zip -o redis-cerberus.zip \
+    && curl -L https://github.com/HunanTV/redis-cerberus/archive/master.zip -o redis-cerberus.zip \
     && unzip redis-cerberus.zip \
     && rm redis-cerberus.zip \
     && cd redis-cerberus-master/ \
